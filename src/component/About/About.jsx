@@ -3,6 +3,7 @@ import AboutImg from '../../assets/AboutImg.png'; // Import the image
 import Member1 from '../../assets/Member1.png';
 import Member2 from '../../assets/Member2.png';
 import Member3 from '../../assets/Member3.png';
+import { useState } from "react";
 // import Member4 from '../../assets/Member4.png';
 import Easy from '../../assets/Easy.png';
 import HeartShakeIcon from '../../assets/HeartShakeIcon.png';
@@ -67,7 +68,20 @@ InfoCard.propTypes = {
   text: PropTypes.any
 }
 
+
+
 const About = () => {
+
+  const [likes, setLikes] = useState();
+
+  const handleLike = () => { 
+    setLikes(likes + 1);
+  }
+
+  const handleDislike = () => { 
+    setLikes(likes - 1);
+  }
+
   return (
     <div>
       {/* Main About section */}
@@ -77,7 +91,7 @@ const About = () => {
           <h2>About Us</h2>
           <p>
             Founded in 2016, Homecq is a real estate technology company with a mission
-            to empower people to move freely. We're re-imagining the way people buy, sell, and rent homes, 
+            to empower people to move freely.  We &apos; re re-imagining the way people buy, sell, and rent homes, 
             with a focus on design, quality, and community.
           </p>
         </div>
